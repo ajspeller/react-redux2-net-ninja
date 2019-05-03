@@ -16,6 +16,14 @@ class App extends Component {
     this.deleteNinja = this.deleteNinja.bind(this);
   }
 
+  componentDidMount() {
+    console.log(`Component Mounted`);
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log(`Component Updated`);
+    console.log(prevProps, prevState);
+  }
+
   addNinja(ninja) {
     ninja.id = Math.random();
     this.setState({ ninjas: [...this.state.ninjas, ninja] });
